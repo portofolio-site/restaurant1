@@ -1,0 +1,171 @@
+@charset "UTF-8";
+
+/* Common button styles */
+.button {
+	min-width: 150px;
+	max-width: 450px;
+	display: block;
+	margin: 1em;
+	padding: 2px 5px 2px 5px; /*1em 2em;*/
+	border: none;
+	vertical-align: middle;
+	position: relative;
+	z-index: 1;
+	-webkit-backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	cursor: pointer;
+	text-align: center;
+}
+.button:focus {
+	outline: none;
+}
+.button > span {
+	vertical-align: middle;
+}
+.button--text-thick {
+	font-weight: 300;
+}
+/* Borders */
+.button--border-thin {
+	border: 1px solid;
+}
+.button--antiman.button--border-thin::before {
+	border-width: 1px;
+}
+.button--itzel.button--border-thin::before {
+	border: 1px solid;
+	-webkit-transform: translate3d(0, 100%, 0) translate3d(0, -1px, 0);
+	transform: translate3d(0, 100%, 0) translate3d(0, -1px, 0);
+}
+
+/* Rayen */
+.button--rayen {
+	overflow: hidden;
+	padding: 0;
+	width: 230px;
+}
+.button--rayen.button--inverted {
+	color: #fff;
+}
+.button--rayen::before {
+	content: attr(data-text);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #7986cb;
+	-webkit-transform: translate3d(-100%, 0, 0);
+	transform: translate3d(-100%, 0, 0);
+}
+.button--rayen.button--inverted::before {
+	background: #fff;
+	color: #37474f;
+}
+.button--rayen > span {
+	display: block;
+}
+.button--rayen::before,
+.button--rayen > span {
+	padding: 1em 2em;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+	-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+	transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+.button--rayen:hover::before {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+.button--rayen:hover > span {
+	-webkit-transform: translate3d(0, 100%, 0);
+	transform: translate3d(0, 100%, 0);
+}
+
+/* Ujarak */
+.button--ujarak {
+	-webkit-transition: border-color 0.4s, color 0.4s;
+	transition: border-color 0.4s, color 0.4s;
+}
+.button--ujarak::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+/*	background: #ffa07a;*/
+	z-index: -1;
+	opacity: 0;
+	-webkit-transform: scale3d(0.7, 1, 1);
+	transform: scale3d(0.7, 1, 1);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+	transition: transform 0.4s, opacity 0.4s;
+	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+.button--ujarak.button--round-s::before {
+	border-radius: 2px;
+}
+.button--ujarak.button--inverted::before {
+	background: #7986CB;
+}
+.button--ujarak,
+.button--ujarak::before {
+	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+.button--ujarak:hover {
+	color: #fff;
+	border-color: #37474f;
+}
+.button--ujarak.button--inverted:hover {
+	color: #37474F;
+	border-color: #fff;
+}
+.button--ujarak:hover::before {
+	opacity: 1;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+
+/* Profileボタン */
+#botton-profile {
+    margin-left: 0;
+      width: 55%;
+			height: 40px;
+			line-height: 40px;
+      background: #000;
+      opacity: 0.8;
+      color: #fff;
+}
+#botton-profile a {
+	text-decoration: none;
+	color: #fff;
+}
+/* 業務案内ボタン・お知らせ一覧・ブログ一覧リンク */
+.button_link {
+  border: none;
+  width: 25%;
+  margin: 0 auto;
+  font-size: 0.9em;
+/*  background-color: #18A898;*/
+/*  background-color: #C20D23; */
+  color: #fff;
+}
+
+.button_link a {
+	text-decoration: none;
+	color: #fff;
+		display: block;
+}
+
+/* サービス案内からの問い合わせボタン */
+.button_service_contents {
+	margin-bottom: 30px;
+}
+
+.button_contact {
+	margin-top: 20px;
+}
